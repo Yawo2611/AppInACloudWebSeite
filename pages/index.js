@@ -5,11 +5,11 @@ export default function Home({ items }) {
   return (
     <div className={styles.body}>
       <header className={styles.header}>
-        <nav class="navigation">
+        <nav className={styles.navigation}>
             <ul>
-                <li className={styles.list-element}><a href="#" className={styles.link}>Home</a></li>
-                <li className={styles.list-element}><a href="/post" className={styles.link}>Post</a></li>
-                <li className={styles.list-element}><a href="/put" className={styles.link}>Put</a></li>
+                <li className={styles.listElement}><a href="#" className={styles.link}>Home</a></li>
+                <li className={styles.listElement}><a href="/post" className={styles.link}>Post</a></li>
+                <li className={styles.listElement}><a href="/put" className={styles.link}>Put</a></li>
             </ul>
         </nav>
       </header>
