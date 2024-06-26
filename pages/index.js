@@ -3,14 +3,23 @@ import { Env } from "@humanwhocodes/env";
 
 export default function Home({ items }) {
   return (
-    <>
-      <h1>Welcome</h1>
+    <div className={styles.body}>
+      <header className={styles.header}>
+        <nav class="navigation">
+            <ul>
+                <li className={styles.list-element}><a href="#" className={styles.link}>Home</a></li>
+                <li className={styles.list-element}><a href="/post" className={styles.link}>Post</a></li>
+                <li className={styles.list-element}><a href="/put" className={styles.link}>Put</a></li>
+            </ul>
+        </nav>
+      </header>
+    <h1 className={styles.title}>ToDo-List</h1>
       <div>
         {items.map((item) => {
           return <p key={item.id}>{item.text}</p>;
         })}
       </div>
-    </>
+    </div>
   );
 }
 
