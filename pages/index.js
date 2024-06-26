@@ -12,6 +12,7 @@ export default function Home({ items }) {
                 <li className={styles.listElement}><a href="/put" className={styles.link}>Put</a></li>
             </ul>
         </nav>
+
       </header>
     <h1 className={styles.title}>ToDo-List</h1>
       <div>
