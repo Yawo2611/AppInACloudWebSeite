@@ -15,7 +15,7 @@ export default function Home({ items }) {
     <h1 className={styles.title}>ToDo-List</h1>
       <div>
         {items.map((item) => {
-          return <p key={item.id}>{item.text}</p>;
+            return <div><h1 key={item.id}>{item.title}</h1><p key={item.id}>{item.text}</p></div>;
         })}
       </div>
     </div>
@@ -24,9 +24,6 @@ export default function Home({ items }) {
 
 export async function getStaticProps() {
   const env = new Env();
-
-  console.log("ENV:", env);
-  console.log("ENV-URL:", env.get("FUNC_URL"));
 
   const res = await fetch(env.get("FUNC_URL"));
 
