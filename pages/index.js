@@ -8,8 +8,6 @@ export default function Home({ items }) {
         <nav className={styles.navigation}>
             <ul>
                 <li className={styles.listElement}><a href="/" className={styles.link}>Home</a></li>
-                <li className={styles.listElement}><a href="/post" className={styles.link}>Post</a></li>
-                <li className={styles.listElement}><a href="/put" className={styles.link}>Put</a></li>
             </ul>
         </nav>
 
@@ -25,8 +23,12 @@ export default function Home({ items }) {
 }
 
 export async function getStaticProps() {
+  const env = new Env();
 
-  const res = await fetch("https://yukisfunctionapp.azurewebsites.net/api/items");
+  console.log("ENV:", env);
+  console.log("ENV-URL:", env.get("FUNC_URL"));
+
+  const res = await fetch(env.get("FUNC_URL"));
 
   let items = await res.json();
 
